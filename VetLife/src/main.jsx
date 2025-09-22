@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App.jsx'   // mantené este
-import Formulario from './assets/Envio/Formulario.jsx';
-import Gracias from './assets/Envio/Agradecimiento.jsx';
+import App from './App.jsx'
+import Formulario from './components/Formulario.jsx'
+import Gracias from './pages/Agradecimiento.jsx'
+import Productos from './pages/Productos.jsx'
+import Checkout from './pages/Checkout.jsx'   // 👈 corregido
 
 import './index.css'
 
@@ -15,7 +17,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Formulario />} />
 
         {/* Página de agradecimiento */}
-        <Route path="/gracias" element={<Gracias />} />
+        <Route path="/agradecimiento" element={<Gracias />} />
+
+        {/* Página de productos */}
+        <Route path="/productos" element={<Productos />} />
+
+        {/* Página de checkout */}
+        <Route path="/checkout" element={<Checkout />} />
 
         {/* Ruta opcional: la app base de Vite */}
         <Route path="/vite" element={<App />} />
